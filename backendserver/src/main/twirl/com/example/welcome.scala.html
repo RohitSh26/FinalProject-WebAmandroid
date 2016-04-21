@@ -1,0 +1,77 @@
+@(message: String)
+<html>
+    <head>
+        <title>Upload Apk</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="jumbotron" style="background">
+                <h1>Web Amandroid</h1>
+                <p>Web Interface for amandroid</p>
+            </div>
+        </div>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <div class="panel panel-success">
+                    <div class="panel-heading">About Web Amandroid</div>
+                    <div class="panel-body">This website is designed to access amandroid from your web browser.
+                        Please follow the steps mentioned in upload form.
+                        <br><br>
+                        The result will look like below.
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="panel panel-success">
+                    <div class="panel-heading">Upload APK Form</div>
+
+                    <div class="panel-body">
+                        <p class="text-left">
+                            Upload apk file to scan results.
+                        <ol>
+                            <li>Upload apk</li>
+                            <li>Enter your email to receive results in case you app takes more time to analysed</li>
+                            <li>Submit for upload and analysis.</li>
+                        </ol>
+                        </p>
+                        <form role="form" method="POST" action="/processing" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control btn-success" id="file" name="file" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="enter email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="Submit" class="form-control btn btn-success">
+                            </div>
+                        </form>
+                        <h4>@message<h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </body>
+</html>

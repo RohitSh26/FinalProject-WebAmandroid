@@ -1,0 +1,125 @@
+@import java.io.File
+@import scala.reflect.io.Path
+@import java.util.Date
+@(apkDirList: List[File])
+
+<html lang="en">
+    <head>
+        <title>Result - Directory</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+
+        <!--myWindow=window.location.href(document.getElementById("link").getAttribute("href"))-->
+
+        <script type="text/javascript">
+
+           $(document).ready(function(){
+               $('#code').load('includes/contentSnippet.html');
+           });
+        </script>
+
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="jumbotron" style="background">
+                <h1>Web Amandroid</h1>
+                <p>Web Interface for amandroid</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <!--<a class="text-center" href="http://localhost:9000/upload"><code><b>click here to go to home</code></a>-->
+                </div>
+                <div class="col-sm-4 text-center one-edge-shadow" style="margin-bottom:15px">
+                    <a class="text-center" href="http://localhost:9000/upload"><code><b>click here to go to home</code></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="panel panel-success">
+                <div class="panel-heading text-center">
+                    Result Analysis Directory Structure
+                </div>
+                <div class="panel-body">
+                    @for(f <- apkDirList) {
+                    <div class="row one-edge-shadow">
+
+                            @if(f.isFile){
+                                @if(Path.extension(f.getAbsoluteFile.toString).equalsIgnoreCase("dex")) {
+                                    <div class="col-sm-4">
+                                        <span>
+                                            <i class="fa fa-file-code-o "></i>
+                                            <a href="#" id="link">@f.getName</a>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <span>@{if((f.length/1024)<=0){(f.length+" bytes") } else {(f.length/1024)+" KB"}} </span>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <span>@{new Date(f.lastModified())}</span>
+                                    </div>
+                                } else {
+                                            @if(Path.extension(f.getAbsoluteFile.toString).equalsIgnoreCase("DS_Store")) {
+
+                                            } else {
+                                                <div class="col-sm-4">
+                                                    <span>
+                                                        <i class="fa fa-file-code-o "></i>
+                                                        <a href="/file/@f" id="link" target="_self">@f.getName</a>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <span>@{if((f.length/1024)<=0){(f.length+" bytes") } else {(f.length/1024)+" KB"}} </span>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <span>@{new Date(f.lastModified())}</span>
+                                                </div>
+                                            }
+
+
+
+                                        }
+                            } else {
+
+                                <div class="col-sm-4">
+                                    <span>
+                                        <i class="fa fa-folder "></i>
+                                        <a href="#" id="link">@f.getName</a>
+                                    </span>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <span>@{if((f.length/1024)<=0){(f.length+" bytes") } else {(f.length/1024)+" KB"}} </span>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <span>@{new Date(f.lastModified())}</span>
+                                </div>
+                            }
+
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="tree"></div>
+        </div>
+
+    </body>
+</html>

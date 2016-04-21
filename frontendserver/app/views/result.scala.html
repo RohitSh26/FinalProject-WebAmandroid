@@ -1,0 +1,495 @@
+@(apkDir: String)
+<html lang="en">
+<head>
+    <title>@apkDir - Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"
+            type="text/javascript"></script>
+</head>
+<body>
+<!--navigation-->
+
+<div class="container">
+
+    <!-- Static navbar -->
+    <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/upload">
+                    WebAmandroid</a>
+                <span class="navbar-text navbar-version pull-left"><b></b></span>
+            </div>
+
+            <div class="collapse navbar-collapse nav-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Presentation</a></li>
+                    <li><a href="#">Scanned Apps</a></li>
+                    <li><a href="/colloquia">Colloquia</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <h1>WebAmandroid</h1>
+                <p>Web Amandroid is a web service for amandroid.</p>
+                <p>Amandroid is the static analysis framework for Android apps.</p>
+
+                <a class="btn btn-lg btn-primary" href="http://amandroid.sireum.org/documentation.html" role="button">Amandroid Documentation &raquo;</a>
+                </p>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <img src="@routes.Assets.versioned("images/argus.png")" alt="..." class="img-rounded img-responsive">
+                <img src="@routes.Assets.versioned("images/santos.png")" alt="..." class="img-rounded img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!---->
+<div class="container outer">
+    <h2>Results</h2>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">ApkInfo</a></li>
+        <li><a data-toggle="tab" href="#menu1">PTA Results</a></li>
+        <li><a data-toggle="tab" href="#menu2">Taint Result</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div class="container">
+
+                <!-- Printing out the Application Name -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse1">FileURI</a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div  class="outer" id="FileURI">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div  class="outer" id="FileURI">-->
+
+                <!--</div>-->
+
+                <!-- Printing out the Application Name -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse2">Permissions</a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="outer"  id="permissions">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Printing out the Application Name -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse3">PackageName</a>
+                            </h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="outer"  id="appPackageName">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Printing out the Application Name -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse4">Activities</a>
+                            </h4>
+                        </div>
+                        <div id="collapse4" class="panel-collapse collapse">
+                            <div class="outer"  id="activities">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse5">Components</a>
+                            </h4>
+                        </div>
+                        <div id="collapse5" class="panel-collapse collapse">
+                            <div class="outer"  id="components">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse6">Certificates</a>
+                            </h4>
+                        </div>
+                        <div id="collapse6" class="panel-collapse collapse">
+                            <div class="outer"  id="certificates">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse7">Intent Filters</a>
+                            </h4>
+                        </div>
+                        <div id="collapse7" class="panel-collapse collapse">
+                            <div class="outer"  id="intentFdb">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <script id="FileURI-template" type="text/template">
+            <h4>APK File URI: </h4>
+            {{#nameUri}}
+            <div class="FileURI">
+                <p>{{.}}</p>
+            </div>
+            {{/nameUri}}
+        </script>
+
+        <script id="permissions-template" type="text/template">
+            <h4>Uses Permissions: </h4>
+            {{#uses_permissions}}
+            <div class="permission">
+                <p>{{.}}</p>
+            </div>
+            {{/uses_permissions}}
+        </script>
+
+        <script id="appPackageName-template" type="text/template">
+            <h4>App Package Name: </h4>
+            {{#appPackageName}}
+            <div class="appPackageName">
+                <p>{{.}}</p>
+            </div>
+            {{/appPackageName}}
+        </script>
+
+        <script id="activities-template" type="text/template">
+            <h4>Activities: </h4>
+            {{#activities}}
+            <div class="activities">
+                <p>
+                    {{typ}}
+                </p>
+            </div>
+            {{/activities}}
+        </script>
+
+        <script id="components-template" type="text/template">
+            <h4>Components: </h4>
+            {{#componentInfos}}
+            <div class="components">
+                <p>
+                    {{#compType}}
+                        <b>Component Type</b> : {{typ}}
+                    {{/compType}}
+                </p><br>
+                <p>
+                    <b>Type</b> : {{typ}}
+                </p><br>
+                <p>
+                    <b>Exported</b> : {{exported}}
+                </p><br>
+                <p>
+                    <b>Enabled</b> : {{enabled}}
+                </p>
+
+            </div>
+            {{/componentInfos}}
+        </script>
+
+        <script id="certificates-template" type="text/template">
+            <h4>Certificates: </h4>
+            {{#certificates}}
+            <div class="components">
+                <p>
+                    <b>Type</b> : {{typ}}
+                </p>
+                <p>
+                    <b>version</b> : {{version}}
+                </p>
+                <p>
+                    <b>serialNumber</b> : {{serialNumber}}
+                </p>
+                <p>
+                    <b>owner</b> : {{owner}}
+                </p>
+                <p>
+                    <b>issuer</b> : {{issuer}}
+                </p>
+                <p><br>
+                    {{#validity}}
+                    <b>Component Type</b> : {{notBefore}}<br>
+                    <b>Component Type</b> : {{notAfter}}
+                    {{/validity}}
+                </p><br>
+                <p>
+                    <b>Public Key</b><br>
+                    {{#pubkey}}
+                    <b>Algorithm Name</b> : {{algName}}<br>
+                    <b>exponent</b> : {{exponent}}<br>
+                    <b>modulus</b> : {{modulus}}<br>
+                    {{/pubkey}}
+                </p><br>
+                <p>
+                    <b>Certificate Signature</b><br>
+                    {{#certSig}}
+                    <b>Algorithm Name</b> : {{algName}}<br>
+                    <b>oid</b> : <pre>{{oid}}</pre><br>
+                    <b>hexdata</b> : <pre>{{hexdata}}</pre><br>
+                    {{/certSig}}
+                </pre><br>
+                <p>
+                    <b>fps</b><br>
+                    {{#fps}}
+                    <b>md5fp</b> : <pre>{{md5fp}}</pre> <br>
+                    <b>sha1fp</b> : <pre>{{sha1fp}}</pre> <br>
+                    <b>sha256fp</b> : <pre>{{sha256fp}}</pre> <br>
+                    {{/fps}}
+                </p><br>
+
+            </div>
+            {{/certificates}}
+        </script>
+
+        <script id="intentFdb-template" type="text/template">
+            {{#intentFdb}}
+            <div class="intentFdb">
+                <p>
+                    {{#intentFmap}}
+                    {{.}}
+                        {{holder}}
+                        {{typ}}
+                    {{/.}}
+                    {{/intentFmap}}
+                </p><br>
+
+            </div>
+            {{/intentFdb}}
+        </script>
+
+
+
+
+
+
+
+
+
+
+        <script>
+	$(function(){
+
+		$.getJSON('@routes.Assets.versioned(apkDir+"/stage/apk.json")', function(data){
+
+			console.log(data);
+
+			//reading File URI
+			var template1 = $('#FileURI-template').html();
+			var info1 = Mustache.to_html(template1, data);
+			$('#FileURI').html(info1);
+
+            //Reading Permissions
+			template1 = $('#permissions-template').html();
+			info1 = Mustache.to_html(template1, data);
+			$('#permissions').html(info1);
+
+			//Reading appPackageName
+			template1 = $('#appPackageName-template').html();
+			info1 = Mustache.to_html(template1, data);
+			$('#appPackageName').html(info1);
+
+            //Reading activities
+			template1 = $('#activities-template').html();
+			info1 = Mustache.to_html(template1, data);
+			$('#activities').html(info1);
+
+			//Reading components
+			template1 = $('#components-template').html();
+			info1 = Mustache.to_html(template1, data);
+			$('#components').html(info1);
+
+			//Reading certificates
+			template1 = $('#certificates-template').html();
+			info1 = Mustache.to_html(template1, data);
+			$('#certificates').html(info1);
+
+			//Reading intentFdb
+			template1 = $('#intentFdb-template').html();
+			info1 = Mustache.to_html(template1, data);
+			$('#intentFdb').html(info1);
+
+		});
+	});
+	</script>
+
+
+        <div id="menu1" class="tab-pane fade">
+            <div class="container">
+                <div class="outer" id="pta">
+                    <pre class="prettyprint" id="code">
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+        $(function(){
+
+            $.getJSON('@routes.Assets.versioned(apkDir+"/stage/ptaresult.json")', function(data){
+                console.log(data);
+
+
+                $('#code').html(data);
+
+                document.getElementById("code").innerHTML = JSON.stringify(data, undefined, 2);
+            });
+        });
+        </script>
+
+
+
+        <div id="menu2" class="tab-pane fade">
+            <div class="container">
+
+                <!-- Printing out the Application Name -->
+                <div  class="outer" id="source">
+
+                </div>
+
+                <div class="outer"  id="sink">
+
+                </div>
+
+                <div class="outer"  id="path">
+
+                </div>
+            </div>
+
+            <script id="source-template" type="text/template">
+                <h4>Sources: </h4>
+                {{#sources}}
+                <div class="source">
+                    <p>
+                        <b>Type</b> : {{typ}}
+                    </p><br>
+                    <p>
+                        <b>Taint Slice</b> : {{desc}}
+                    </p>
+                </div>
+                {{/sources}}
+            </script>
+
+            <script id="sink-template" type="text/template">
+                <h4>Sinks: </h4>
+                {{#sinks}}
+                <div class="sink">
+                    <p>
+                        <b>Type</b> : {{typ}}
+                    </p><br>
+                    <p>
+                        <b>Taint Slice</b> : {{desc}}
+                    </p>
+                </div>
+                {{/sinks}}
+            </script>
+
+            <script>
+            $(function(){
+
+                $.getJSON('@routes.Assets.versioned(apkDir+"/stage/taintresult.json")', function(data){
+
+                    console.log(data);
+
+                    //reading sources
+                    var template1 = $('#source-template').html();
+                    var info1 = Mustache.to_html(template1, data);
+                    $('#source').html(info1);
+
+                    //reading sinks
+                    var template1 = $('#sink-template').html();
+                    var info1 = Mustache.to_html(template1, data);
+                    $('#sink').html(info1);
+                });
+            });
+	        </script>
+
+
+            <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                               controllers.HomeController.index
+
+# displays the upload form to the user
+GET     /upload                         controllers.FirstUploadController.upload
+
+# upload and process the apk
+POST     /processing                    controllers.FirstUploadController.uploadFile
+
+# point to analsis
+GET     /pta/:apkFileName               controllers.FirstUploadController.pta(apkFileName)
+
+#PTA Result Page
+GET     /result/*name                   controllers.FirstUploadController.result(name)
+
+GET     /ptaemail/:apkFileName          controllers.FirstUploadController.ptawithemail(apkFileName)
+
+
+GET     /notification                   controllers.FirstUploadController.notifyuser
+
+
+
+POST     /search                        controllers.FirstUploadController.search
+
+GET     /colloquia                      controllers.FirstUploadController.colloquia
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)
+
+
+# An example controller showing how to use dependency injection
+GET     /count                          controllers.CountController.count
+
+# An example controller showing how to write asynchronous code
+GET     /message                        controllers.AsyncController.message
+
+
+
+

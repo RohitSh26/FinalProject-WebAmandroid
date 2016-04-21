@@ -1,0 +1,95 @@
+@(message: String)
+
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colloquium Document - @message</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+		.colliqua{
+			margin: 0 3em 1.25em;
+			padding: 90px;
+			margin-top: 70px;
+			-webkit-box-shadow: -5px 11px 20px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: -5px 11px 20px -4px rgba(0,0,0,0.75);
+            box-shadow: -5px 11px 20px -4px rgba(0,0,0,0.75);
+		}
+		p {
+			font-size: 1em;
+			line-height: 1.25em;
+			margin: 1.25em 0;
+			text-align: justify;
+		}
+		</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Static navbar -->
+    <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/upload">
+                    WebAmandroid</a>
+                <span class="navbar-text navbar-version pull-left"><b></b></span>
+            </div>
+
+            <div class="collapse navbar-collapse nav-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Presentation</a></li>
+                    <li><a href="#">Scanned Apps</a></li>
+                    <li><a href="/colloquia">Colloquia</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row colliqua">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+            </div>
+            <div class="col-md-8center-block">
+                <h1 class="text-center">Web Interface for Amandroid</h1><br>
+                <h3 class="display-4 text-center">Presenter: Rohit Sharma</h3><br>
+                <h3 class="display-4 text-center">Advisor: Sankardas Roy</h3><br>
+
+                <p class="text-justify">
+                    Android is a very popular platform with millions of users. However, malicious or vulnerable apps have been developed, which causes security concerns. Amandroid is a static analysis framework for vetting android apps. Amandroid has gained a fair bit of attention from the research community, but it does not yet support a real-time vet request from users. So, a web service for amandroid will enable an online vetting facility. In other words, with amandroid web service all users can analyze and test android apps and get the analysis results.</p>
+
+                <p class="text-justify">Amandroid is built on the Akka framework, which includes a runtime toolkit to design and develop concurrent, distributed and message-driven application based on the Actor Model. Web service for amandroid is built on the Play-framework that is built on Akka and uses a highly scalable web-friendly architecture. In this talk, I will explain the amandroid web service and its need. I will then present the current architecture of this web service. I will explain the challenges we faced in developing this web architecture and how we have come to the solution. I will give a demo of the current application. I will conclude the presentation by explaining the future enhancement for the web service.</p>
+
+                <p class="text-justify">Brief Bio: Rohit Sharma earned a Bachelor of Engineering in computer science from SVITS Indore, India in 2011. He is a MS candidate at Bowling Green State University where he works with Dr. Sankardas Roy. Prior to Bowling Green State University, he worked in industry for 3 years as a software engineer. His research interests are in Web Development and Programming Languages.</p>
+
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

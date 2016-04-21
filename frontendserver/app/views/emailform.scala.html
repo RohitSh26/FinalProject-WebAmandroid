@@ -1,0 +1,96 @@
+@(url: String)
+<html lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Static navbar -->
+    <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/upload">
+                    WebAmandroid</a>
+                <span class="navbar-text navbar-version pull-left"><b></b></span>
+            </div>
+
+            <div class="collapse navbar-collapse nav-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="divider-vertical"></li>
+                    <li><a href="/project">Project</a></li>
+                    <li><a href="/presentation">Presentation</a></li>
+                    <li><a href="/scanned.html">Scanned Apps</a></li>
+                    <li><a href="colloquia">Colloquia</a></li>
+                </ul>
+
+
+                <form class="navbar-form navbar-right" action="search.html" method="get">
+                    <div class="form-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search">
+                    </div>
+                    <input type="hidden" name="check_keywords" value="yes">
+                    <input type="hidden" name="area" value="default">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <h1>Amandroid</h1>
+                <p>Amandroid is a static analysis framework for Android apps.</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="" role="button">Amandroid Documentation &raquo;</a>
+                </p>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <img src="@routes.Assets.versioned("images/argus.png")" alt="..." class="img-rounded img-responsive">
+                <img src="@routes.Assets.versioned("images/santos.png")" alt="..." class="img-rounded img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <div class="panel panel-success">
+                    <div class="panel-heading">We will Email you the results!</div>
+                    <div class="panel-body">
+                        You will receive a result URL please visit the link to see your results! Thanks!<br>
+                        <code></code>
+
+                        <br>
+                        <a href="http://localhost:9000/upload"><code><b>click here to go to home</code></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
