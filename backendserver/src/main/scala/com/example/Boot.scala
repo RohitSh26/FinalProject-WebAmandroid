@@ -165,20 +165,3 @@ object Boot extends App with SimpleRoutingApp {
 
 
 }
-
-//~
-//      get {
-//        path("apkinfo") {
-//          lazy val myPTAActor = actorSystem.actorOf(Props(new MyPTAActor(apkFileDir)))
-//
-//          complete {
-//            (myPtaActor ? PointToAnalysisObject)(5 minutes).mapTo[Future[Seq[Object]]]
-//              .map(s => Await.result(s, Duration.Inf).foreach {
-//                dr =>
-//                  println(dr)
-//              })
-//            "OK"
-//          }
-//
-//        }
-//}
