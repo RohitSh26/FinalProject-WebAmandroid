@@ -30,7 +30,7 @@ class MyAPKInfoActor(string: String) extends Actor{
   ////create a method which will return the data {PointsToAnalysis} from the supervisor actor
   def getPointToAnalysisData(string: String): Future[Seq[Object]] = {
 
-
+// path is hardcoded could be change for testing purposes.
     val path = "/Users/rohitsharma/work/source/fcapps/"+string
     println("getPointToAnalysisData - PATH: "+path)
 
@@ -49,6 +49,8 @@ class MyAPKInfoActor(string: String) extends Actor{
 
 
     val fseq = Future.sequence(futures)
+    
+    val fseqq = Future.sequence(futures)
 
     fseq
   }
